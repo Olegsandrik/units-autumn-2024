@@ -13,7 +13,20 @@ describe('ProductCard test', () => {
         name: 'test',
         description: 'testing',
         price: 123,
-        priceSymbol: '$',
+        priceSymbol: '₽',
+        category: 'Одежда',
+        imgUrl: "/test.png"
+        };
+        const { asFragment } = render(<ProductCard {...product} />);
+        expect(asFragment()).toMatchSnapshot();
+    });
+
+    it('should render correctly without price symbol', () => {
+        const product: Product = {
+        id: 1,
+        name: 'test',
+        description: 'testing',
+        price: 123,
         category: 'Одежда',
         imgUrl: "/test.png"
         };

@@ -12,8 +12,8 @@ describe('test useCurrentTime hook', () => {
 
 
     it('should have clearInterval been called once time', () => {
-        const { result, unmount } = renderHook(() => useCurrentTime());
         jest.spyOn(global, 'clearInterval');
+        const { result, unmount } = renderHook(() => useCurrentTime());
         unmount();
         expect(clearInterval).toHaveBeenCalledTimes(1);
     });
